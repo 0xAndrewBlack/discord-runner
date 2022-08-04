@@ -110,7 +110,7 @@ const createRouter = () => {
     "/poll",
     [
       validators.bodyNumberIdValidator("id"),
-      validators.bodyIdValidator("platformId"),
+      validators.bodyIdValidator("platformGuildId"),
       validators.bodyStringValidator("question"),
       validators.bodyIdValidator("expDate"),
       validators.bodyArrayValidator("options"),
