@@ -1,16 +1,11 @@
 /* eslint-disable no-unused-vars */
 import * as dotenv from "dotenv";
 
-const envFound = dotenv.config();
-/* if (envFound.error) {
-  throw new Error("Couldn't find .env file or volumes in compose.");
-} */
+dotenv.config();
 
 const nodeEnv = process.env.NODE_ENV || "development";
 
 const redisHost = process.env.REDIS_HOST;
-const hmacAlgorithm = process.env.HMAC_ALGORITHM || "sha256";
-const hmacSecret = process.env.HMAC_SECRET;
 const discordToken = process.env.DISCORD_TOKEN;
 const backendUrl = process.env.BACKEND_URL;
 const api = {
@@ -42,15 +37,9 @@ if (!redisHost) {
   throw new Error("You need to specify the REDIS_HOST in the .env file.");
 }
 
-if (!hmacSecret) {
-  throw new Error("You need to specify the HMAC_SECRET in the .env file.");
-}
-
 export default {
   nodeEnv,
   redisHost,
-  hmacAlgorithm,
-  hmacSecret,
   discordToken,
   backendUrl,
   api,
