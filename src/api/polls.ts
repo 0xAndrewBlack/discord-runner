@@ -55,7 +55,7 @@ const createPoll = async (poll: NewPoll): Promise<boolean> => {
       `${config.backendUrl}/poll`,
       {
         platform: config.platform,
-        platformId: channel.guildId,
+        platformGuildId: channel.guildId,
         startDate: dayjs().unix(),
         ...poll,
       },
