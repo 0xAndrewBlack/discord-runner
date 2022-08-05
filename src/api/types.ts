@@ -97,8 +97,10 @@ type NewPoll = {
   roles: SelectMenuOption[];
   requirements: SelectMenuOption[];
   requirementId: number;
+  platformGuildId: string;
   channelId: string;
   question: string;
+  description: string;
   options: string[];
   reactions: string[];
   expDate: string;
@@ -106,11 +108,14 @@ type NewPoll = {
 
 type Poll = {
   id: number;
+  requirementId: number;
+  platformGuildId: string;
   question: string;
-  startDate: number;
-  expDate: number;
+  description: string;
   options: string[];
   reactions: string[];
+  startDate: number;
+  expDate: number;
 };
 
 type Reaction = {
