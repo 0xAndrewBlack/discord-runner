@@ -322,7 +322,7 @@ abstract class Events {
 
             const embed = new MessageEmbed({
               title: `Poll #69: ${question}`,
-              color: `#${config.embedColor}`,
+              color: `#${config.embedColor.default}`,
               description: await createPollText(poll),
             });
 
@@ -336,6 +336,7 @@ abstract class Events {
                 "or cancel it using **/cancel**."
             );
           } catch (e) {
+            logger.error(e);
             message.reply("Incorrect input, please try again.");
           }
 
