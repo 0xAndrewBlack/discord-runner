@@ -85,7 +85,7 @@ const createPollText = async (
     : `Poll ends on <t:${expDate}>`;
 
   const guildRes = await axios.get(
-    `${config.backendUrl}/guild/platformId/${platformGuildId}`
+    `${config.backendUrl}/guild/platform/${config.platform}/${platformGuildId}`
   );
 
   const requirements = guildRes?.data?.roles[0]?.requirements.filter(
